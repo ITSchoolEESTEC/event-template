@@ -108,3 +108,26 @@ installed)</li>
         </tr>
     </tbody>
 </table>
+
+### Recommended Visual Studio Code Extensions
+---
+
+* [Auto Import](https://marketplace.visualstudio.com/items?itemName=steoates.autoimport)
+* [Babel ES6/ES7](https://marketplace.visualstudio.com/items?itemName=dzannotti.vscode-babel-coloring)
+* [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
+* [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)
+* [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
+* [Document This](https://marketplace.visualstudio.com/items?itemName=joelday.docthis)
+* [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
+* [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
+* [File Peek](https://marketplace.visualstudio.com/items?itemName=abierbaum.vscode-file-peek)
+* [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory)
+* [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
+* [Image Preview](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview)
+* [npm](https://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script)
+* [npm Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
+* [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
+* [Simple Icon Theme](https://marketplace.visualstudio.com/items?itemName=LaurentTreguier.vscode-simple-icons)
+* [stylelint](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint)
+* [Theme - TinaciousDesign](https://marketplace.visualstudio.com/items?itemName=tinaciousdesign.theme-tinaciousdesign)
+* [Vue Components](https://marketplace.visualstudio.com/items?itemName=seanwash.vue)
