@@ -1,133 +1,168 @@
-# Course 1 (16.03.2017)
+# Course 2 (23.03.2017)
 ## Topics
 
-### Technologies and tools used
----
-1. HTML5 ([Guide](https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5))
-2. CSS3 / LESS ([CSS Guide](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3), [LESS](http://lesscss.org/))
-3. JavaScript ES6+ ([ES6](http://es6-features.org))
-4. NodeJS ([Tutorials](https://nodeschool.io))
-5. Git ([Guide](http://rogerdudler.github.io/git-guide/))
-7. Docker ([Guide](https://docs.docker.com/engine/userguide/))
-8. Visual Studio Code ([Why?](https://code.visualstudio.com/docs/editor/whyvscode))
-
-
-### Setting up the work environment
----
-<table>
-    <thead>
-        <tr>
-            <th></th>
-            <th>Windows</th>
-            <th>Linux</th>
-            <th>macOS</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <th>Git</th>
-            <td>
-                <ol>
-                    <li>Download <a href="https://git-scm.com/">Git</a></li>
-                    <li>On the <strong>Select Components</strong> section of the installation choose at least the last 3 options</li>
-                    <li>On the next window select <strong>Use Git from the Windows Command Prompt</strong></li>
-                    <li>Then select <strong>Checkout as-is, commit Unix-style line endings</strong></li>
-                    <li><strong>Use MinTTY (the default terminal of MSYS2)</strong> will ensure we can use bash in Windows</li>
-                    <li>On the <strong>Configuring extra options</strong> screen check all options (for <strong>Git Credential Manager</strong> you must have .NET 4.5.1 or later
-installed)</li>
-                    <li>When the installation is finished check <strong>Launch Git Bash</strong> to verify that everything was installed fine</li>
-                </ol>
-            </td>
-            <td>
-                <p>Install Git from your distro package manager (aptitude, yum, pacman, etc.)</p>
-                <p>Ex: For <strong>Ubuntu</strong> run:</p>
-                <code>sudo apt-get install git</code>
-            </td>
-            <td>
-                <p>A version of Git is already installed in your OS</p>
-            </td>
-        </tr>
-        <tr>
-            <th>NodeJS</th>
-            <td>
-                <ol>
-                    <li>Go to <a href="https://nodejs.org">nodejs.org</a> and download the <strong>latest current version (7.7.X+)</strong></li>
-                    <li>Leave the default location for the installation folder</li>
-                    <li>On the <strong>Custom Setup</strong> screen make sure everything is added for install</li>
-                    <li>Wait for the installation to finish and open up a new Git Bash window</li>
-                    <li>In the Git Bash type <code>node -v && npm -v</code>. It should print out your versions of Node and npm (Node package manager)</li>
-                </ol>
-            </td>
-            <td>
-                <p>Install NodeJS through your distro package manager</p>
-                <p>Ex: For <strong>Ubuntu</strong> open a terminal an run the following commands:</p>
-                <code>curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -</code><br/>
-                <code>sudo apt-get install -y nodejs</code>
-            </td>
-            <td>
-                <ol>
-                    <li>Go to <a href="https://nodejs.org">nodejs.org</a> and download the <strong>latest current version (7.7.X+)</strong></li>
-                    <li>Wait for the installation to finish and open up a new terminal</li>
-                    <li>In the terminal type <code>node -v && npm -v</code>. It should print out your versions of Node and npm (Node package manager)</li>
-                </ol>
-            </td>
-        </tr>
-        <tr>
-            <th>Docker</th>
-            <td>
-                <p>For Windows 10 Pro:</p>
-                <ol>
-                    <li>Make sure you have <a href="http://www.memuplay.com/blog/index.php/2016/01/27/enable-hardware-virtualization/">hardware virtualization enabled from BIOS</a></li>
-                    <li>Press the <strong>Get Docker</strong> download button from <a href="https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description">Docker CE</a></li>
-                    <li>At first start Docker will ask you to enable Hyper-V (a built in virtual machine on Windows 10), to complete this step you must restart</li>
-                    <li>After starting Docker <strong>right click</strong> on the whale icon in the <strong>System Tray</strong> and click <strong>Settings</strong></li>
-                    <li>Go to <strong>Shared Drives</strong> and check <strong>C</strong> then click Apply, if it asks for a password type in your Windows login password</li>
-                    <li>Go to <strong>Advanced</strong> and drag <strong>CPU</strong> to <strong>1</strong> and <strong>Memory</strong> to <strong>1024 MB</strong>, press Apply</li>
-                </ol>
-                <p>For Windows 8.1 and older:</p>
-                <ol>
-                    <li>Go to <a href="https://www.docker.com/products/docker-toolbox">Docker Toolbox</a> and download it</li>
-                    <li>Follow <a href="https://docs.docker.com/toolbox/toolbox_install_windows/">these</a> steps to install and verify Docker Toolbox</li>
-                </ol>
-                <p>If your machine does not have a x64 CPU you will not be able to run Docker.</p>
-            </td>
-            <td>
-                <p>You can find installation instructions for most popular Linux distros <a href="https://www.docker.com/community-edition">here</a> or in the <strong>Get Docker</strong> dropdown on the site</p>
-                <p>Ex: Installing <strong><a href="https://store.docker.com/editions/community/docker-ce-server-ubuntu">Docker for Ubuntu</a></strong></p>
-            </td>
-            <td>
-                <p>You can easily download <strong>Docker for Mac</strong> from <a href="https://store.docker.com/editions/community/docker-ce-desktop-mac?tab=description">Docker CE</a></p>
-                <p>For version of Mac lower than <strong>Yosemite 10.10.3</strong> use <a href="https://www.docker.com/products/docker-toolbox">Docker Toolbox</a></p>
-            </td>
-        </tr>
-        <tr>
-            <th>Visual Studio Code</th>
-            <td colspan="3" align="center">
-                <p>Download and install from https://code.visualstudio.com/</p>
-            </td>
-        </tr>
-    </tbody>
-</table>
-
-### Recommended Visual Studio Code Extensions
+### NodeJS basics
 ---
 
-* [Auto Import](https://marketplace.visualstudio.com/items?itemName=steoates.autoimport)
-* [Babel ES6/ES7](https://marketplace.visualstudio.com/items?itemName=dzannotti.vscode-babel-coloring)
-* [Beautify](https://marketplace.visualstudio.com/items?itemName=HookyQR.beautify)
-* [Color Highlight](https://marketplace.visualstudio.com/items?itemName=naumovs.color-highlight)
-* [Docker](https://marketplace.visualstudio.com/items?itemName=PeterJausovec.vscode-docker)
-* [Document This](https://marketplace.visualstudio.com/items?itemName=joelday.docthis)
-* [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig)
-* [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
-* [File Peek](https://marketplace.visualstudio.com/items?itemName=abierbaum.vscode-file-peek)
-* [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory)
-* [Git Lens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens)
-* [Image Preview](https://marketplace.visualstudio.com/items?itemName=kisstkondoros.vscode-gutter-preview)
-* [npm](https://marketplace.visualstudio.com/items?itemName=eg2.vscode-npm-script)
-* [npm Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.npm-intellisense)
-* [Path Intellisense](https://marketplace.visualstudio.com/items?itemName=christian-kohler.path-intellisense)
-* [Simple Icon Theme](https://marketplace.visualstudio.com/items?itemName=LaurentTreguier.vscode-simple-icons)
-* [stylelint](https://marketplace.visualstudio.com/items?itemName=shinnn.stylelint)
-* [Theme - TinaciousDesign](https://marketplace.visualstudio.com/items?itemName=tinaciousdesign.theme-tinaciousdesign)
-* [Vue Components](https://marketplace.visualstudio.com/items?itemName=seanwash.vue)
+With NodeJS installed and available in the terminal (bash/cmd/ps) you can now run JavaScript code with one simple command:
+
+```js
+node FILENAME[.js]
+```
+The ```.js``` extension is optional, NodeJS will always assume you are trying to interpret JavaScript code.
+
+Like in all programming languages, JavaScript offers a way of displaying messages inside the console. These messages, or logs most of time, are useful for debuggin purposes.
+
+```js
+console.log('Console message visible at runtime');
+```
+
+> Keep in mind that simple quotes and double quotes behave the same in JavaScript, there is no special use case for them.
+
+Because NodeJS is an executable it also allows JavaScript access to the system that it runs on.
+
+```process.argv``` contains a list of all the provided command arguments.
+
+> The first two items in the list are always the path to the node executable and the path to file that was executed.
+
+```js
+console.log(process.argv);
+```
+
+To get user input you would need to search starting from the third element in ```process.argv```;
+
+You can also use .splice (a method available for arrays) to isolate user input: ```node FILENAME ARG1 ARG2 ARG3...```
+
+```js
+var userInput = process.argv.splice(2); // [ARG1, ARG2, ARG3...]
+```
+
+Let's say the user runs this command ```node hello World```.
+
+```js
+// hello.js
+
+var name = process.argv[2]; // Get first user input argument
+
+console.log('Hello, ' + name + '!'); // Concatenation is done with "+"
+```
+
+As a result the user would see the following message in the console:
+
+```
+Hello, World!
+```
+
+We can also make sure we have a default in place, in case the user doesn't provide any arguments.
+
+In case ```process.argv[2]``` is evaluated to [falsy](https://developer.mozilla.org/en-US/docs/Glossary/Falsy), ```name``` will take the value ```'Human'```;
+
+```js
+var name = process.argv[2] || 'Human';
+```
+
+To determine how many elements an array has we can use the ```length``` property.
+
+```js
+console.log(process.argv.length) // Displays the size of the array
+```
+
+> Checkout the full ```process``` documentation [here](https://nodejs.org/docs/latest/api/process.html#process_process)
+
+### ECMAScript 6 (ES6) features
+---
+
+Since introduction [ES6](http://es6-features.org/) has brought many enhacements, simplifications and new functionalities to JavaScript. We'll try and showcase some of them and discover the serious one as we write our code for the project.
+
+#### ```const``` and ```let``` instead of ```var```
+
+```var``` was prone to errors, you could easily break your could if you did not fully understand the way it worked. **ES6** replaces ```var``` with ```const``` and ```let```.
+
+Use ```const``` when you know don't want the value to change and leverage ```let``` to make sure you variables are properly block scoped.
+> Read more about ```const``` [here](http://es6-features.org/#Constants) and scoped variables [here](http://es6-features.org/#BlockScopedVariables).
+
+```js
+const name = process.argv[2] || 'Human'; // name can no longer be changed after this
+```
+
+#### Template literals
+
+String concatenation can be a messy thing, especially when you have more than one variable. **ES6** introduces [template literals](http://es6-features.org/#StringInterpolation) a new type of notation that allows for simple injection of JavaScript inside strings.
+
+```js
+console.log(`Hello, ${process.argv[2]}!`);
+```
+
+> Backticks (``` ` ```) are used for the string notation and ```${}``` for injecting JavaScript values or expressions.
+
+#### Arrow functions
+
+While not necessarily obvious at the moment, you will appreciate the usefulness of [arrow function](http://es6-features.org/#ExpressionBodies) as the code gets more and more complex.
+
+The first immediate gain is in writing cleaner expressions:
+
+```js
+const namesList = process.argv[2].splice(2);
+
+// ES5 (old specification)
+const names = namesList.reduce(function(acc, curr, idx) {
+    return acc + (idx > 0 ? ', ' : '') + curr;
+}, '');
+
+// ES6
+const names = namesList.reduce((acc, curr, idx) => `${acc}${idx > 0 ? ', ' : ''}${curr}`, '');
+```
+
+> [Reduce](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/Reduce) is another functions available to arrays.
+
+> [Conditional (ternary) operator](https://developer.mozilla.org/ro/docs/Web/JavaScript/Reference/Operators/Conditional_Operator)
+
+### npm
+
+Setting up a new NodeJS project always begins with ```npm init``` or if you want to use an existing one you'll certainly need to run ```npm install``` to ensure all dependencies are downloaded and available.
+
+```npm``` (node package manager) is the main tool for working with NodeJS project, it helps you get set-up, helps you install or remove packages and allows you to stay up to date with your project dependencies.
+
+Running ```npm init``` inside a folder with start the process of creating a ```package.json``` that will handle all you NodeJS project information (metadata and dependencies).
+
+You'll be presented with various questions about the project you are creating, a name, a description, a respository and so on. It is entirely up to you what you decide to enter.
+
+When a folder contains a ```package.json```, that folders is regarded as node package, therefore you can install dependencies for that package.
+
+To install a package, run the following command:
+
+```bash
+npm install PACKAGE_NAME[@PACKAGE_VERSION]
+```
+
+> For example, to install a popular time and date manipulation library, [moment.js](https://momentjs.com), I first search for it in the [npm repository](https://www.npmjs.com). On [its page](https://www.npmjs.com/package/moment) I can see instruction on how to install it in right-hand side: ```npm install moment```. This command will automatically install the latest version of **moment.js**, if I want a different version I can specify by running ```npm install moment@2.10.0```.
+
+> There is also a short command for ```npm install```, and that is ```npm i```. Similarly ```npm uninstall``` can be writen as ```npm un```.
+
+Just running ```npm install PACKAGE_NAME``` will only install the package into our folder, it will not update ```package.json``` and add it as a dependency. To do that we need to also specify another argument for our install command:
+
+```bash
+npm install --save PACKAGE_NAME
+```
+
+This will save into the ```dependecies``` section of ```package.json``` to ensure that this a production required dependency of the final package/project we're creating.
+
+```bash
+npm install --save-dev PACKAGE_NAME
+```
+
+With ```--save-dev```, the package will be added to the ```devDependencies``` section of the ```package.json``` file, telling us that this dependency is only required for development and that the final package/project will not include it.
+
+> ```--save``` and ```--save-dev``` also have short versions, ```-S``` and respectively ```-D```.
+
+Using our installed packages is also quite easy using ```require()```, a NodeJS function that loads our packages and gives us access to their code inside others files.
+```js
+const moment = require('moment');
+
+const then = new Date('2017-03-23');
+const elapsed = moment(then).fromNow();
+
+console.log(`Course 2 took place ${elapsed}`);
+```
+
+In this course there are also two JavaScript files (```hello.js``` and ```date.js```) and a ```package.json``` included, to server as examples for the topics discussed.
