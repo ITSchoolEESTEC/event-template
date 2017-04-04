@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Playing with Vue</title>
+        <style type="text/css">
+            .active {
+                color: #A1020C;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Vue Playground</h1>
+
+        <div id="app">
+            {{ message.home }}
+            <input v-model="message.home" type="text">
+
+            <ul>
+                <list-item :item="item" v-for="item in list" :key="item.id"></list-item>
+            </ul>
+        </div>
+
+        <script src="https://unpkg.com/vue" type="text/javascript"></script>
+        <script>
+            Vue.component('list-item', {
+                template: '<li @click="changeState(item)" :class="{ active: item.selected }">{{ item.text }}</li>',
+                props: [
+                    'item'
+                ],
+                methods: {
+                    changeState: function(item) {
+                        item.selected = !item.selected;
+                    }
+                }
+            });
+
+            window.app = new Vue({
+                el: '#app',
+                data: {
+                    message: {
+                        home: 'Hello Vue!'
+                    },
+                    greeting: 'Hi!',
+                    list: [
+                        {
+                            id: 1,
+                            text: 'Item #1',
+                            selected: false
+                        },
+                        {
+                            id: 2,
+                            text: 'Item #2',
+                            selected: true
+                        },
+                        {
+                            id: 3,
+                            text: 'Item #3',
+                            selected: false
+                        }
+                    ]
+                }
+            });
+        </script>
+    </body>
+</html>
